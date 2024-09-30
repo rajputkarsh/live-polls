@@ -1,6 +1,6 @@
 import { AuthButtons } from "@/components/buttons/AuthButtons";
 import { GetStartedButton } from "@/components/buttons/GetStartedButton";
-import { AuthLoader } from "@/components/Loader";
+import { AuthLoader } from "@/components/loader";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { MessageCircleMore, Radio } from "lucide-react";
 import Image from "next/image";
