@@ -1,7 +1,7 @@
 "use client";
 
 import routes from "@/config/routes";
-import { cn } from "@/lib/utils/ui-utils";
+import { cn } from "@/lib/utils";
 import {
   RegisterLink,
   useKindeBrowserClient,

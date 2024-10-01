@@ -1,9 +1,9 @@
 "use client";
 
-import { cn, PropsWithClassName } from "@/lib/utils/ui-utils";
+import { cn, PropsWithClassName } from "@/lib/utils";
 import BeatLoader from "react-spinners/BeatLoader";
 import { blue } from "tailwindcss/colors";
-import { Skeleton } from "./ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export const Loader = () => {
   return (
