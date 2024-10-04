@@ -17,10 +17,8 @@
 /build
 
 # misc
-.vscode
 .DS_Store
 *.pem
-package-lock.json
 
 # debug
 npm-debug.log*

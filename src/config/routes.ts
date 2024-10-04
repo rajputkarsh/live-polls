@@ -1,10 +1,9 @@
-import { Event } from "@prisma/client";
 
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 
 type EventRouteParams = {
-  ownerId: Event["ownerId"];
-  eventSlug: Event["slug"];
+  ownerId: String;
+  eventSlug: String;
 };
 
 export default {

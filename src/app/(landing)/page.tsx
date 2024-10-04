@@ -1,6 +1,6 @@
 import { AuthButtons } from "@/components/buttons/AuthButtons";
 import { GetStartedButton } from "@/components/buttons/GetStartedButton";
-import { AuthLoader } from "@/components/loader";
+import { AuthLoader } from "@/components/Loader";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { MessageCircleMore, Radio } from "lucide-react";
 import Image from "next/image";
@@ -46,7 +46,7 @@ const Headline = () => {
       </h1>
 
       <p className="text-muted-foreground text-center leading-relaxed mt-2 lg:mt-4">
-        Pulse offers a suite of interactive features to keep your audience
+        We offer a suite of interactive features to keep your audience
         engaged and provide you with valuable insights.
       </p>
     </div>

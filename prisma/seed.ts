@@ -15,8 +15,8 @@ const runSeed = async () => {
   const myUser = await prisma.user.create({
     data: {
       id: myUserId,
-      displayName: "Test User",
-      email: "test@utkarshrajput.com",
+      displayName: "Alice",
+      email: "yaroyac242@biscoine.com",
       color: colors.red["500"],
     },
   });
