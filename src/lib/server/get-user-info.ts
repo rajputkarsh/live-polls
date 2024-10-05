@@ -1,9 +1,8 @@
 import "server-only";
 
-import { User } from "@prisma/client";
 import { prisma } from "../prisma/client";
 
-export const getUserInfo = async (userId: User["id"]) => {
+export const getUserInfo = async (userId: string) => {
   return prisma.user.findUnique({
     where: { id: userId },
     include: {

@@ -13,6 +13,8 @@ export const AuthButtons = async ({ className }: PropsWithClassName) => {
 
   const user = kindeUser && (await getUserInfo(kindeUser.id));
 
+  console.log(`user -- `, user);
+
   const initialNotifications = kindeUser && (await getUserNotifications());
 
   return user ? (
