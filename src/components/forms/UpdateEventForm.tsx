@@ -10,7 +10,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAction } from "next-safe-action/hooks";
 import { FormProvider, useForm } from "react-hook-form";
-import { TextAreaWithCounter } from "../TextAreaWithCounter";
+import TextAreaWithCounter from "../TextAreaWithCounter";
 import { Button } from "../ui/button";
 import {
   FormControl,

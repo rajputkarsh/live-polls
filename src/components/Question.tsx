@@ -15,7 +15,7 @@ import { CheckCircle, Pin } from "lucide-react";
 import { useRef, useState } from "react";
 import { QuestionVoteButton } from "./buttons/QuestionVoteButton";
 import { QuestionOptionsMenu } from "./menu/QuestionOptionsMenu";
-import { TextAreaWithCounter } from "./TextAreaWithCounter";
+import TextAreaWithCounter from "./TextAreaWithCounter";
 import { Button } from "./ui/button";
 import { UserAvatar } from "./UserAvatar";
 

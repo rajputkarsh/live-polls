@@ -15,7 +15,7 @@ import { Event, User } from "@prisma/client";
 import { ChatBubbleIcon } from "@radix-ui/react-icons";
 import { useAction } from "next-safe-action/hooks";
 import { FormProvider, useForm } from "react-hook-form";
-import { TextAreaWithCounter } from "../TextAreaWithCounter";
+import TextAreaWithCounter from "../TextAreaWithCounter";
 import { Button, buttonVariants } from "../ui/button";
 import {
   FormControl,

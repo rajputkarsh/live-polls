@@ -9,7 +9,7 @@ import { Event } from "@prisma/client";
 import { Plus, Trash } from "lucide-react";
 import { useAction } from "next-safe-action/hooks";
 import { FormProvider, useFieldArray, useForm } from "react-hook-form";
-import { TextAreaWithCounter } from "../TextAreaWithCounter";
+import TextAreaWithCounter from "../TextAreaWithCounter";
 import { Button } from "../ui/button";
 import {
   FormControl,
