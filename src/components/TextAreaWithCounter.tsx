@@ -6,7 +6,7 @@ import { Textarea, TextareaProps } from "./ui/textarea";
 
 type Props = PropsWithClassName<TextareaProps>;
 
-export const TextAreaWithCounter = forwardRef<HTMLTextAreaElement, Props>(
+const TextAreaWithCounter = forwardRef<HTMLTextAreaElement, Props>(
   (
     {
       className,
@@ -49,3 +49,7 @@ export const TextAreaWithCounter = forwardRef<HTMLTextAreaElement, Props>(
     );
   }
 );
+
+TextAreaWithCounter.displayName = 'TextAreaWithCounter';
+
+export default TextAreaWithCounter;
