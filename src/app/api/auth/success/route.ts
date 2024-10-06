@@ -12,7 +12,7 @@ export async function GET() {
   const user = await getUser();
 
   if (!user || !user.id) {
-    throw new Error("Something went wrong with authentication: " + user);
+  return NextResponse.redirect(`${baseUrl}${routes.login}`);
   }
 
   // check if the user exists in the db
