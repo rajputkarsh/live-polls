@@ -68,6 +68,7 @@ export const useLivePoll = ({ poll: initialPoll }: { poll: PollDetail }) => {
                       votes: [
                         ...option.votes,
                         {
+                          id: authorId,
                           authorId,
                           pollId,
                           pollOptionId,
