@@ -21,4 +21,6 @@ const MyBookmarksPage = async () => {
   );
 };
 
+MyBookmarksPage.displayName = "MyBookmarksPage";
+
 export default MyBookmarksPage;
