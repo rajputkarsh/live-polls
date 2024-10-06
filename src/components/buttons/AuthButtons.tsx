@@ -11,13 +11,9 @@ import { PublicAuthButtons } from "./PublicAuthButtons";
 export const AuthButtons = async ({ className }: PropsWithClassName) => {
   const kindeUser = await getKindeServerSession().getUser();
 
-  console.log(`kindeUserkindeUserkindeUser -- `, kindeUser);
-
   const user = kindeUser && (await getUserInfo(kindeUser.id));
 
-  console.log(`user -- `, user);
-
-  const initialNotifications = kindeUser && (await getUserNotifications());
+  const initialNotifications = user && kindeUser && (await getUserNotifications());
 
   return user ? (
     <div className={cn("inline-flex gap-x-7 items-center", className)}>
