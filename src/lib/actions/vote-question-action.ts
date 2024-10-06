@@ -48,12 +48,10 @@ export const voteQuestionAction = actionClient
 
     if (wasUpvotedByUser) {
       // just remove the upvote
-      await prisma.questionUpVote.delete({
+      await prisma.questionUpVote.deleteMany({
         where: {
-          authorId_questionId: {
-            questionId,
-            authorId: user.id,
-          },
+          questionId,
+          authorId: user.id,
         },
       });
 
