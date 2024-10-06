@@ -27,4 +27,7 @@ const MyEventsPage = async () => {
   );
 };
 
+
+MyEventsPage.displayName = "MyEventsPage";
+
 export default MyEventsPage;

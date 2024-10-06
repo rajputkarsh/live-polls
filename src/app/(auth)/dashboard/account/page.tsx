@@ -36,4 +36,7 @@ const AccountPage = async () => {
   );
 };
 
+
+AccountPage.displayName = "AccountPage";
+
 export default AccountPage;
