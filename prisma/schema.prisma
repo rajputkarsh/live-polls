@@ -67,6 +67,8 @@ model Event {
 
   owner   User   @relation("owner", fields: [ownerId], references: [id], onDelete: Cascade)
   ownerId String @db.ObjectId
+
+  @@index([slug, ownerId])
 }
 
 model EventParticipant {
@@ -76,6 +78,8 @@ model EventParticipant {
 
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId String @db.ObjectId
+
+  @@unique([eventId, userId])
 }
 
 model Question {
@@ -124,6 +128,8 @@ model PollOption {
 
   poll   Poll   @relation(fields: [pollId], references: [id], onDelete: Cascade)
   pollId String @db.ObjectId
+
+  @@index([pollId, index])
 }
 
 model PollVote {

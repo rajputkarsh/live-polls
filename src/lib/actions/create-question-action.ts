@@ -16,12 +16,10 @@ export const createQuestionAction = actionClient
     }
 
     // find the event
-    const event = await prisma.event.findUnique({
+    const event = await prisma.event.findFirst({
       where: {
-        slug_ownerId: {
-          ownerId,
-          slug: eventSlug,
-        },
+        slug: eventSlug,
+        ownerId: ownerId,
       },
     });
 

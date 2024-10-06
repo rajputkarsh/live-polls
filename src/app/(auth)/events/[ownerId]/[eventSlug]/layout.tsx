@@ -26,7 +26,7 @@ const EventPageLayout = async ({
   children,
   params: { ownerId, eventSlug },
 }: Props) => {
-  const event = await getEventDetail({ ownerId, eventSlug });
+  const event: any = await getEventDetail({ ownerId, eventSlug });
 
   if (!event) {
     return notFound();
