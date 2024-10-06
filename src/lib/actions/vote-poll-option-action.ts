@@ -52,12 +52,10 @@ export const votePollOptionAction = actionClient
     if (previousUserVote) {
       await prisma.$transaction([
         // delete the previous vote
-        prisma.pollVote.delete({
+        prisma.pollVote.deleteMany({
           where: {
-            authorId_pollId: {
-              pollId,
-              authorId: user.id,
-            },
+            pollId,
+            authorId: user.id,
           },
         }),
         // create the new vote
