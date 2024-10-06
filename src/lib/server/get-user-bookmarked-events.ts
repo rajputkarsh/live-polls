@@ -19,7 +19,7 @@ export const getUserBookmarkedEvents = cache(
     }
 
     const userWithBookmarks = await prisma.user.findUnique({
-      where: { id: user.id },
+      where: { kindeId: user.id },
       select: {
         bookmarks: {
           ...eventDetail,

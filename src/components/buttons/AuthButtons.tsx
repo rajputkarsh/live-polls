@@ -11,6 +11,8 @@ import { PublicAuthButtons } from "./PublicAuthButtons";
 export const AuthButtons = async ({ className }: PropsWithClassName) => {
   const kindeUser = await getKindeServerSession().getUser();
 
+  console.log(`kindeUserkindeUserkindeUser -- `, kindeUser);
+
   const user = kindeUser && (await getUserInfo(kindeUser.id));
 
   console.log(`user -- `, user);

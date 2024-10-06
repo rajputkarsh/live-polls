@@ -14,16 +14,16 @@ const runSeed = async () => {
   process.stdout.write("Generating users...");
   const myUser = await prisma.user.create({
     data: {
-      id: myUserId,
+      kindeId: myUserId,
       displayName: "Alice",
       email: "yaroyac242@biscoine.com",
       color: colors.red["500"],
     },
   });
 
-  const otherUsers = await prisma.user.createManyAndReturn({
+  const otherUsers = await prisma.user.createMany({
     data: Array.from({ length: 10 }).map(() => ({
-      id: cuid(),
+      kindeId: cuid(),
       email: faker.internet.email(),
       displayName: faker.internet.displayName(),
       createdAt: faker.date.recent(),
@@ -87,7 +87,7 @@ const runSeed = async () => {
   printCheckMark();
 
   process.stdout.write("Generating polls...");
-  const polls = await prisma.poll.createManyAndReturn({
+  const polls = await prisma.poll.createMany({
     data: [
       {
         eventId: event.id,

@@ -17,14 +17,14 @@ export async function GET() {
 
   // check if the user exists in the db
   let dbUser = await prisma.user.findUnique({
-    where: { id: user.id },
+    where: { kindeId: user.id },
   });
 
   // user were not found, we will create it
   if (!dbUser) {
     dbUser = await prisma.user.create({
       data: {
-        id: user.id,
+        kindeId: user.id,
         displayName:
           user.username ?? user.given_name ?? faker.internet.userName(),
         email: user.email ?? "",

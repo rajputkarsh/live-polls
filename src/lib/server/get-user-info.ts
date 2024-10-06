@@ -4,7 +4,7 @@ import { prisma } from "../prisma/client";
 
 export const getUserInfo = async (userId: string) => {
   return prisma.user.findUnique({
-    where: { id: userId },
+    where: { kindeId: userId },
     include: {
       _count: {
         select: {
