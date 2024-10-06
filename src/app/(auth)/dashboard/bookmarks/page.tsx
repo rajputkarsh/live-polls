@@ -12,7 +12,7 @@ const MyBookmarksPage = async () => {
 
       <div className="relative h-full grid gap-2 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
         {initialBookmarkedEvents.length === 0 ? (
-          <NoContent>You haven't bookmarked any events yet.</NoContent>
+          <NoContent>{`You haven't bookmarked any events yet.`}</NoContent>
         ) : (
           <BookmarkedEventsList initialEvents={initialBookmarkedEvents} />
         )}
