@@ -6,7 +6,7 @@
     "dev": "next dev",
     "format:db": "prisma format",
     "build:db": "prisma generate",
-    "build": "next build",
+    "build": "npm run build:db && next build",
     "start": "next start",
     "lint": "next lint"
   },
