@@ -1,6 +1,7 @@
 "use server";
 
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { redirect } from "next/navigation";
 import { prisma } from "../prisma/client";
 import { questionDetail } from "../prisma/validators/question-validators";
 import { createQuestionSchema } from "../validations/question-schemas";
@@ -12,7 +13,7 @@ export const createQuestionAction = actionClient
     const user = await getKindeServerSession().getUser();
 
     if (!user) {
-      throw new Error("Not authenticated!");
+      redirect('/api/auth/login');
     }
 
     // find the event

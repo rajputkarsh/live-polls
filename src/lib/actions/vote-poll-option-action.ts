@@ -4,6 +4,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { prisma } from "../prisma/client";
 import { votePollOptionSchema } from "../validations/poll-schemas";
 import { actionClient } from "./safe-action";
+import { redirect } from "next/navigation";
 
 export const votePollOptionAction = actionClient
   .schema(votePollOptionSchema)
@@ -11,7 +12,7 @@ export const votePollOptionAction = actionClient
     const user = await getKindeServerSession().getUser();
 
     if (!user) {
-      throw new Error("Not authenticated!");
+      redirect("/api/auth/login");
     }
 
     // find poll

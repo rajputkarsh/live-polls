@@ -5,6 +5,7 @@ import { Event } from "@prisma/client";
 import { cache } from "react";
 import { prisma } from "../prisma/client";
 import { eventDetail } from "../prisma/validators/event-validators";
+import { redirect } from "next/navigation";
 
 type Params = {
   cursor?: Event["id"];
@@ -14,7 +15,7 @@ export const getUserEvents = cache(async ({ cursor }: Params = {}) => {
   const user = await getKindeServerSession().getUser();
 
   if (!user || !user.id) {
-    throw new Error("Not authenticated!");
+      redirect("/api/auth/login");
   }
 
   return await prisma.event.findMany({

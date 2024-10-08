@@ -5,6 +5,7 @@ import { Event } from "@prisma/client";
 import { cache } from "react";
 import { prisma } from "../prisma/client";
 import { eventDetail } from "../prisma/validators/event-validators";
+import { redirect } from "next/navigation";
 
 type Params = {
   cursor?: Event["id"];
@@ -15,7 +16,7 @@ export const getUserBookmarkedEvents = cache(
     const user = await getKindeServerSession().getUser();
 
     if (!user || !user.id) {
-      throw new Error("Not authenticated!");
+      redirect("/api/auth/login");
     }
 
     const userWithBookmarks = await prisma.user.findUnique({
