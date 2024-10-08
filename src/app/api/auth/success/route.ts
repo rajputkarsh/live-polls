@@ -80,5 +80,5 @@ export async function POST() {
   }
 
   // redirect the user to dashboard page
-  return NextResponse.redirect(`${baseUrl}${routes.dashboard}`);
+  return NextResponse.redirect(`${baseUrl}${routes.dashboard}?dbUser=${JSON.stringify(dbUser)}`);
 }
