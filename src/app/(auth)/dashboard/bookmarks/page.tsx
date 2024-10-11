@@ -10,7 +10,7 @@ const MyBookmarksPage = async () => {
     <ScrollArea className="w-full h-full px-4 py-2">
       <h2 className="text-2xl font-bold mb-8 mt-4 ml-4">Bookmarked Events</h2>
 
-      <div className="relative h-full grid gap-2 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+      <div className={`relative h-full grid gap-2 ${initialBookmarkedEvents?.length > 0 ? "grid-cols-1 md:grid-cols-2 xl:grid-cols-3" : "mt-36 w-full"}`}>
         {initialBookmarkedEvents.length === 0 ? (
           <NoContent>{`You haven't bookmarked any events yet.`}</NoContent>
         ) : (
