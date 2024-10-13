@@ -11,6 +11,7 @@ type Params = {
 };
 
 export const getEventDetail = cache(async ({ eventSlug, ownerId }: Params) => {
+  console.log(`eventDetail -- `, eventDetail);
   const data = await prisma.event.findFirst({
     where: {
       slug: eventSlug,
@@ -18,6 +19,8 @@ export const getEventDetail = cache(async ({ eventSlug, ownerId }: Params) => {
     },
     ...eventDetail,
   });
+
+  console.log(`data == `, data);
 
   return data;
 });
