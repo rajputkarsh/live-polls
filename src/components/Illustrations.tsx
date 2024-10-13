@@ -27,7 +27,7 @@ export const NoContent = ({
   children,
   className,
 }: Props) => (
-  <div className={cn("flex flex-col items-center", className)}>
+  <div className={cn("flex flex-col items-center justify-center", className)}>
     <Image src="/create.svg" alt="empty" height={height} width={width} />
     {children}
   </div>
