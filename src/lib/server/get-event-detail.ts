@@ -11,11 +11,13 @@ type Params = {
 };
 
 export const getEventDetail = cache(async ({ eventSlug, ownerId }: Params) => {
-  return await prisma.event.findFirst({
+  const data = await prisma.event.findFirst({
     where: {
       slug: eventSlug,
       ownerId: ownerId,
     },
     ...eventDetail,
   });
+
+  return data;
 });
