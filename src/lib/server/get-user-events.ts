@@ -22,7 +22,6 @@ export const getUserEvents = cache(async ({ cursor }: Params = {}) => {
     where: {
       ownerId: user.id,
     },
-    ...eventDetail,
     take: 20,
     skip: cursor ? 1 : 0,
     ...(cursor ? { cursor: { id: cursor } } : {}),
