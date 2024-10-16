@@ -23,7 +23,7 @@ export const InfiniteScrollList = <T extends { id: any }>({
       cursor,
     });
 
-    if (newItems.length === 0) {
+    if (!newItems.length) {
       setHasMoreData(false);
       return;
     }
