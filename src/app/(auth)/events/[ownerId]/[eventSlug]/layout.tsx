@@ -28,6 +28,8 @@ const EventPageLayout = async ({
 }: Props) => {
   const event: any = await getEventDetail({ ownerId, eventSlug });
 
+  console.log(`event -- `, event);
+
   if (!event) {
     return notFound();
   }
@@ -35,7 +37,7 @@ const EventPageLayout = async ({
   const { owner } = event;
 
   const showDescription =
-    event.shortDescription && event.shortDescription.length > 0;
+    event?.shortDescription && event?.shortDescription?.length > 0;
 
   return (
     <div className="flex flex-col items-start h-full pt-8 px-4 lg:px-8">
@@ -52,12 +54,12 @@ const EventPageLayout = async ({
         {/* Event Name & Description & Organizer */}
         <div>
           <h2 className="font-bold text-2xl lg:text-3xl">
-            {event.displayName}
+            {event?.displayName}
           </h2>
 
           {showDescription && (
             <p className="line-clamp-1 text-sm text-muted-foreground mt-1.5">
-              {event.shortDescription}
+              {event?.shortDescription}
             </p>
           )}
 
@@ -65,13 +67,13 @@ const EventPageLayout = async ({
           <div className="inline-flex items-center gap-x-2 mt-2">
             <span className="text-xs lg:text-sm">
               <span className="text-slate-600">Organized by </span>
-              <span className="font-semibold">{owner.displayName}</span>
+              <span className="font-semibold">{owner?.displayName}</span>
             </span>
 
             <UserAvatar
               className="w-6 h-6"
-              displayName={owner.displayName}
-              color={owner.color}
+              displayName={owner?.displayName}
+              color={owner?.color}
             />
           </div>
         </div>
@@ -80,11 +82,11 @@ const EventPageLayout = async ({
         <div className="flex items-baseline justify-between lg:items-center lg:mr-8 lg:self-end">
           <ParticipantsTooltip
             className="mr-7"
-            participantsCount={event._count.participants}
+            participantsCount={event?._count?.participants || 0}
           />
 
           <div className="inline-flex items-center gap-x-2 mt-6 lg:mt-0">
-            <CopyEventLinkButton ownerId={owner.id} eventSlug={event.slug} />
+            <CopyEventLinkButton ownerId={owner?.id} eventSlug={event?.slug} />
 
             <BookmarkEventButton event={event} />
 
@@ -106,8 +108,8 @@ const EventPageLayout = async ({
           <EventFloatingSidebar
             ownerId={ownerId}
             eventSlug={eventSlug}
-            questionsCount={event._count.questions}
-            pollsCount={event._count.polls}
+            questionsCount={event?._count?.questions || 0}
+            pollsCount={event?._count?.polls || 0}
           />
         </div>
 

@@ -10,9 +10,9 @@ type Props = PropsWithClassName<{
 }>;
 
 export const EventCard = ({ event, className }: Props) => {
-  const questionsCount = event?._count?.questions;
-  const pollsCount = event?._count?.polls;
-  const participantsCount = event?._count?.participants;
+  const questionsCount = event?._count?.questions || 0;
+  const pollsCount = event?._count?.polls || 0;
+  const participantsCount = event?._count?.participants || 0;
 
   return (
     <Link
